@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "prom-alert-to-adaptive-card"
+version = "0.1.0"
+description = "Function that turns a Prometheus alert into a nicely formatted Adaptive Card"
+authors = ["Tim Schwenke <tim.and.trallnag+code@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/trallnag/prom-alert-to-adaptive-card"
+keywords = ["prometheus", "alertmanager", "alerting", "notifications", "microsoft"]
+
+[tool.poetry.dependencies]
+python = ">=3.9, <4.0.0 "
+loguru = ">=0.5.3, <1.0.0"
+pydantic = ">=1.7.2, <2.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = ">=6.1.0, <7.0.0"
+flake8 = ">=3.8.0, < 4.0.0"
+black = "^20.8b1"
+pytest-cov = ">=2.10, <3.0.0"
+rope = ">=0.18"
+isort = ">=5.6"
+mkdocs = ">=1.1"
+devtools = {version = ">=0.6.0", extras = ["pygments"]}
+
+[tool.black]
+line-length = 90
+
+[tool.pytest.ini_options]
+minversion = "6.1"
+markers = [
+    "slow: mark a test as slow in execution"
+]
+log_format = "%(message)s"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
